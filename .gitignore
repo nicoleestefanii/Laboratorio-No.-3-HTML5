@@ -1,0 +1,14 @@
+# Archivos subidos por el formulario (no deben subirse al repo)
+uploaded_files/*
+!uploaded_files/.gitkeep
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración local / entorno
+.env
+
+# Editores
+.vscode/
+.idea/
