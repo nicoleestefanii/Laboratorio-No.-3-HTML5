@@ -16,6 +16,12 @@ Este repositorio contiene el desarrollo del Laboratorio #3 de la asignatura de D
 
 ### Interfaz Principal
 
+![Formulario de registro](Capturas/formulario.png)
+
+![Usuario ya registrado](Capturas/registrado.png)
+
+
+
 - **Formulario de Registro (index.php):** Formulario HTML con Bootstrap que solicita nombre, apellido, identificación, fecha de nacimiento, sexo y foto del aspirante. Utiliza el atributo `enctype="multipart/form-data"` para permitir el envío de archivos, y el atributo `placeholder` en cada campo para guiar al usuario sobre el formato esperado.
 - **Procesamiento del Formulario (procesar.php):** Script backend encargado de validar que los campos no estén vacíos, estandarizar el texto de nombre y apellido a formato tipo título, calcular la edad a partir de la fecha de nacimiento (verificando el rango de 18 a 70 años), validar la extensión de la imagen (jpg, jpeg, png, gif, webp) y guardar la foto de forma segura en la carpeta `uploaded_files/`.
 
@@ -23,6 +29,9 @@ Este repositorio contiene el desarrollo del Laboratorio #3 de la asignatura de D
 
 ```
 TallerAspirantes/
+├── Capturas/
+│   ├── formulario.png
+│   └── registrado.png
 ├── uploaded_files/      # Fotos de los aspirantes guardadas por el backend
 ├── index.php            # Formulario de registro (HTML + Bootstrap)
 ├── procesar.php         # Backend: validación, saneamiento y guardado
