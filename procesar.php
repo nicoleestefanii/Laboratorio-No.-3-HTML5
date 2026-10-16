@@ -103,22 +103,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php include 'includes/header.php'; ?>
 
 
-<?php if (!empty($rutaRelativaFoto)): ?>
-    <div class="text-center mb-4">
-        <h2 class="h5 mb-3">Foto del aspirante</h2>
-        <img
-            src="<?php echo htmlspecialchars(
-                $rutaRelativaFoto,
-                ENT_QUOTES,
-                'UTF-8'
-            ); ?>"
-            alt="Foto del aspirante"
-            class="img-thumbnail rounded"
-            style="max-width: 220px; max-height: 260px; object-fit: cover;"
-        >
-    </div>
-<?php endif; ?>
-
 
 <main class="container my-4 flex-grow-1">
     <section>
