@@ -93,6 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $rutaDestino)) {
                 $rutaRelativaFoto = 'uploaded_files/' . $nombreArchivo;
+                $datos['foto'] = $nombreArchivo; // se usa para mostrarla con foto.php
             } else {
                 $errores[] = "Ocurrió un error al guardar la foto.";
             }
@@ -101,8 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <?php include 'includes/header.php'; ?>
-
-
 
 <main class="container my-4 flex-grow-1">
     <section>
@@ -123,14 +122,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <?php else: ?>
                     <div class="alert alert-success">Aspirante registrado correctamente.</div>
-                    <ul class="list-group mb-3">
-                        <li class="list-group-item"><strong>Nombre:</strong> <?php echo $datos['nombre']; ?></li>
-                        <li class="list-group-item"><strong>Apellido:</strong> <?php echo $datos['apellido']; ?></li>
-                        <li class="list-group-item"><strong>Identificación:</strong> <?php echo $datos['identificacion']; ?></li>
-                        <li class="list-group-item"><strong>Sexo:</strong> <?php echo $datos['sexo']; ?></li>
-                        <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> <?php echo $datos['fechaNacimiento']; ?></li>
-                        <li class="list-group-item"><strong>Edad:</strong> <?php echo $datos['edad']; ?> años</li>
-                    </ul>
+                    <div class="row g-3 mb-3 align-items-start">
+                        <div class="col-md-4 text-center">
+                            <!-- La foto se sirve con foto.php porque uploaded_files/ está bloqueada desde el navegador -->
+                            <img src="foto.php?f=<?php echo urlencode($datos['foto']); ?>"
+                                 alt="Foto de <?php echo $datos['nombre'] . ' ' . $datos['apellido']; ?>"
+                                 class="img-fluid img-thumbnail foto-aspirante">
+                        </div>
+                        <div class="col-md-8">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Nombre:</strong> <?php echo $datos['nombre']; ?></li>
+                                <li class="list-group-item"><strong>Apellido:</strong> <?php echo $datos['apellido']; ?></li>
+                                <li class="list-group-item"><strong>Identificación:</strong> <?php echo $datos['identificacion']; ?></li>
+                                <li class="list-group-item"><strong>Sexo:</strong> <?php echo $datos['sexo']; ?></li>
+                                <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> <?php echo $datos['fechaNacimiento']; ?></li>
+                                <li class="list-group-item"><strong>Edad:</strong> <?php echo $datos['edad']; ?> años</li>
+                            </ul>
+                        </div>
+                    </div>
                     <a href="index.php" class="btn btn-primary">Registrar otro aspirante</a>
                 <?php endif; ?>
 

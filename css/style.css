@@ -63,3 +63,10 @@ body {
 .site-footer .fw-semibold {
     color: var(--utp-pink-dark);
 }
+
+/* Foto del aspirante en el resultado */
+.foto-aspirante {
+    max-height: 260px;
+    object-fit: cover;
+    border-color: var(--utp-pink);
+}

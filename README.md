@@ -33,6 +33,7 @@ TallerAspirantes/
 │   ├── formulario.png
 │   └── registrado.png
 ├── uploaded_files/      # Fotos de los aspirantes guardadas por el backend
+├── foto.php             # Entrega la foto guardada de forma segura
 ├── index.php            # Formulario de registro (HTML + Bootstrap)
 ├── procesar.php         # Backend: validación, saneamiento y guardado
 └── README.md            # Documentación del proyecto
