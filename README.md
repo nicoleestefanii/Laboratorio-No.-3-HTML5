@@ -18,7 +18,7 @@ Este repositorio contiene el desarrollo del Laboratorio #3 de la asignatura de D
 
 ![Formulario de registro](Capturas/formulario.png)
 
-![Usuario ya registrado](Capturas/registrado.png)
+![Usuario ya registrado](Capturas/registro.png)
 
 
 
